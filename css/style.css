@@ -10,10 +10,34 @@ body {
   letter-spacing: 0.6px;
 }
 
+.container-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: azure;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.title h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 5px 0;
+  background: linear-gradient(to top, #4043ce 0%, #a0c0fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 nav main {
   width: 100%;
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 nav .navbar {
@@ -22,8 +46,9 @@ nav .navbar {
   bottom: 0;
   display: flex;
   background-color: azure;
-  padding: 15px;
+  padding: 15px 0;
   justify-content: space-evenly;
+  align-items: center;
   box-shadow: -1px -1px 100px rgb(61, 55, 55);
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -38,21 +63,32 @@ nav a {
   font-weight: 500;
 }
 
+nav button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  color: azure;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background-color: rgb(127, 106, 245);
+  cursor: pointer;
+}
+
+nav button:hover,
+nav a:hover {
+  background-color: rgb(163, 149, 243);
+}
+
 .container {
   width: 100%;
   height: 100%;
   padding: 10px;
 }
 
-.title h1 {
-  text-align: center;
-  font-size: 3rem;
-  background: linear-gradient(to top, #d0ff28 0%, #6efd4a 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-main {
+.cards {
+  margin: 80px 0;
   width: 100%;
   height: 100%;
   display: flex;
@@ -60,7 +96,8 @@ main {
   gap: 12px;
 }
 
-.card {
+.card,
+.form-add-pantun {
   padding: 12px;
   width: 95%;
   font-size: 1.5rem;
@@ -71,6 +108,76 @@ main {
   margin: auto;
   box-shadow: 2px 2px 6px rgb(61, 55, 55);
   text-align: c;
+}
+
+.container-form-add-pantun {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.form-add-pantun {
+  position: relative;
+  display: block;
+  padding: 40px;
+}
+
+.form-add-pantun input {
+  padding: 12px 13px;
+  border-radius: 4px;
+  outline: none;
+  border: 3px solid rgb(71, 71, 71);
+  font-size: 18px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.form-add-pantun .buat {
+  margin-top: 10px;
+  padding: 14px 15px;
+  font-size: 18px;
+  background-color: #41ff41;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.close-form-add-pantun {
+  cursor: pointer;
+  position: absolute;
+  background-color: #fa6c6c;
+  width: 22px;
+  height: 22px;
+  text-align: center;
+  line-height: 22px;
+  font-size: 1rem;
+  font-weight: 200;
+  border-radius: 50%;
+  color: azure;
+  top: 5px;
+  right: 5px;
+}
+
+.close-form-add-pantun:hover {
+  background-color: rgb(253, 163, 163);
+}
+
+.form-add-pantun,
+.container-form-add-pantun {
+  display: none;
+}
+
+.display-block-form-add-pantun {
+  display: block;
+}
+
+.display-flex-container-form-add-pantun {
+  display: flex;
 }
 
 .card .jumlah-bait {
@@ -104,19 +211,20 @@ main {
 }
 
 @media only screen and (min-width: 600px) {
-  .card {
+  .card, .form-add-pantun {
     width: 480px;
   }
 }
 
 @media only screen and (min-width: 600px) {
-  nav .navbar {
+  nav .navbar,
+  .title {
     width: 520px;
   }
 }
 
 @media only screen and (max-width: 500px) {
-   .card .author{
+  .card .author {
     margin-top: 7px;
   }
 }
